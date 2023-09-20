@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =8
+let g:netrw_dirhist_8='/home/alexander/minimaldots/neovim/.config/nvim'
+let g:netrw_dirhist_7='/home/alexander/minimaldots/dunst/.config/dunst'
+let g:netrw_dirhist_6='/home/alexander/minimaldots/dunst/.config'
+let g:netrw_dirhist_5='/home/alexander/minimaldots/dunst'
+let g:netrw_dirhist_4='/home/alexander/minimaldots'
+let g:netrw_dirhist_3='/home/alexander/minimaldots/compton'
+let g:netrw_dirhist_2='/home/alexander/minimaldots'
+let g:netrw_dirhist_1='/home/alexander/minimaldots/neovim/.config/nvim'
