@@ -1,5 +1,3 @@
-vim.g.mapleader = " "
-
 local set = vim.opt
 
 set.showcmd = true        -- Show (partial) command in status line.
@@ -27,8 +25,8 @@ set.wildmenu = true
 set.autoindent = true
 
 set.termguicolors = true
-vim.cmd.colorscheme("kanagawa")
-set.background = 'dark'
+vim.cmd("colorscheme kanagawa-dragon")
+-- set.background = 'dark'
 
 set.updatetime=500
 -- How searching behaves
@@ -36,6 +34,8 @@ set.smartcase = true --
 set.incsearch = true -- Search as you type
 
 set.laststatus=3
+
+set.undofile = true
 
 -- set.autochdir = true
 
