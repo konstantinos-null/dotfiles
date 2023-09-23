@@ -103,5 +103,5 @@ bind "set menu-complete-display-prefix on"
 
 STARSHIP_CONFIG=~/.config/starship.toml
 # eval "$(starship init bash)"
-eval "$(oh-my-posh init --config ~/.poshthemes/paradox.omp.json bash)"
+eval "$(oh-my-posh init --config ~/.poshthemes/negligible.omp.json bash)"
 source ~/.bashutils.sh
