@@ -24,6 +24,8 @@
         starship
         pipx
         drawio
+        lazygit
+        lazydocker
       ];
     };
   };
