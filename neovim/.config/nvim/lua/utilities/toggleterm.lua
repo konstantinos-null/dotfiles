@@ -28,7 +28,7 @@ function _lazygit_toggle()
   lazygit:toggle()
 end
     
-vim.api.nvim_set_keymap("n", "<leader>g", "<cmd>lua _lazygit_toggle()<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<leader>gt", "<cmd>lua _lazygit_toggle()<CR>", {noremap = true, silent = true})
 
 local status_ok, leap = pcall(require, "leap")
 if not status_ok then
