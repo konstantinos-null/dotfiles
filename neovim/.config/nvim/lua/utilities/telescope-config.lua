@@ -56,7 +56,7 @@ require("telescope").setup{
 local builtin = require("telescope.builtin")
 vim.keymap.set('n', '<Leader>gf', builtin.git_files, {})
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
--- vim.keymap.set('n', '<Leader>lg', 'builtin.live_grep<CR>')
+vim.keymap.set('n', '<Leader>lg', builtin.live_grep, {})
 -- vim.keymap.set('n', '<Leader><Leader>c', [[<Cmd>lua require('telescope.builtin').commands()<CR>]], { noremap = true, silent = true})
 -- vim.keymap.set('n', '<Leader>gr', [[<Cmd>lua require'telescope'.extensions.repo.list()<CR>]], { noremap = true, silent = true})
 -- vim.keymap.set('n', '<Leader>t', [[<Cmd>lua require('telescope.builtin')<CR>]], { noremap = true, silent = true})
