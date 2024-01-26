@@ -113,6 +113,7 @@ require("lazy").setup({
 })
 
 require('user.config')
+require('user.snips')
 
 require('ui.lualine')
 require('ui.bufferline')
@@ -130,7 +131,5 @@ require('code.cmp')
 require('code.dap')
 require('code.lspconf')
 require('code.mason')
-
-
 
 -- vim: ts=2 sts=2 sw=2 et

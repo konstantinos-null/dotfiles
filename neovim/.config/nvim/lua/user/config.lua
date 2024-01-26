@@ -50,4 +50,3 @@ vim.g.netrw_banner = '0'
 
 vim.keymap.set('n', '<Leader>dd', '<Cmd>Lexplore %:p:h<CR>')
 vim.keymap.set('n', '<Leader>da', '<Cmd>Lexplore<CR>')
-
