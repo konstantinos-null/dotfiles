@@ -33,7 +33,8 @@ require("telescope").setup{
           theme = "dropdown"
       },
       find_files = {
-          theme = "dropdown"
+          theme = "dropdown",
+          find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*"}
       },
       marks = {
           theme = "dropdown"
