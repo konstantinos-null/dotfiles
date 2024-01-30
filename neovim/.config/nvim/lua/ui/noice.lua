@@ -53,3 +53,11 @@ noice.setup({
       },
     },
 })
+
+vim.keymap.set("n", "<leader>dis", function ()
+    require("noice").cmd("dismiss")
+end)
+
+vim.keymap.set("n", "<leader>er", function ()
+    require("noice").cmd("telescope")
+end)
