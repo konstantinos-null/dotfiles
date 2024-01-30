@@ -9,10 +9,3 @@ require("telescope").setup{
     },
   },
 }
-
-local M = {}
-M.search_files = function()
-    require("telescope.builtin").find_files({
-    hidden = true,
-})
-end
