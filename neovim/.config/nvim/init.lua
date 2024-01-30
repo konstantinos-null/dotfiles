@@ -37,8 +37,8 @@ require("lazy").setup({
   'kyazdani42/nvim-tree.lua',
 
   -- Snippets
-  'hrsh7th/vim-vsnip',
-  'hrsh7th/vim-vsnip-integ',
+  -- 'hrsh7th/vim-vsnip',
+  -- 'hrsh7th/vim-vsnip-integ',
   'l3mon4d3/luasnip',
   'saadparwaiz1/cmp_luasnip',
 
@@ -60,7 +60,7 @@ require("lazy").setup({
   'hrsh7th/cmp-buffer',
   'hrsh7th/cmp-path',
   'hrsh7th/cmp-cmdline',
-  'hrsh7th/cmp-vsnip',
+  -- 'hrsh7th/cmp-vsnip',
   'hrsh7th/cmp-nvim-lua',
   -- 'hrsh7th/nvim-compe',
 
