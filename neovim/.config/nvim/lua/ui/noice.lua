@@ -61,3 +61,8 @@ end)
 vim.keymap.set("n", "<leader>er", function ()
     require("noice").cmd("telescope")
 end)
+
+
+
+require("nvim-tree").setup()
+vim.api.nvim_set_keymap("n", "<C-h>", ":NvimTreeToggle<cr>", {silent=true, noremap=true})
