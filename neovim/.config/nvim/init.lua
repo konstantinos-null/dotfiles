@@ -33,8 +33,8 @@ require("lazy").setup({
   'folke/trouble.nvim',
   'rebelot/kanagawa.nvim',
   'ryanoasis/vim-devicons',
-  'kyazdani42/nvim-web-devicons',
-  'kyazdani42/nvim-tree.lua',
+  'nvim-tree/nvim-web-devicons',
+  'nvim-tree/nvim-tree.lua',
 
   -- Snippets
   -- 'hrsh7th/vim-vsnip',
