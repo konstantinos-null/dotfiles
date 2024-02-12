@@ -56,6 +56,8 @@ end
 -- Set up luasnip
 local luasnip = require 'luasnip'
 
+local lspkind = require('lspkind')
+
 -- Set up cmp
 local status_ok, cmp = pcall(require, "cmp")
 if not status_ok then
@@ -100,17 +102,31 @@ cmp.setup {
             end
         end,
     },
-    formatting = {
-        fields = { "abbr", "menu" },
-        format = function(entry, vim_item)
-            vim_item.menu = ({
-                luasnip = "[Snippet]",
-                buffer = "[Buffer]",
-                path = "[Path]",
-            })[entry.source.name]
-            return vim_item
-        end,
-    },
+    -- formatting = {
+    --     fields = { "abbr", "menu" },
+    --     format = function(entry, vim_item)
+    --         vim_item.menu = ({
+    --             luasnip = "[Snippet]",
+    --             buffer = "[Buffer]",
+    --             path = "[Path]",
+    --         })[entry.source.name]
+    --         return vim_item
+    --     end,
+    -- },
+    --
+	formatting = {
+	  format = lspkind.cmp_format({
+	    mode = "symbol_text",
+	    menu = ({
+	      buffer = "[Buffer]",
+	      nvim_lsp = "[LSP]",
+	      luasnip = "[LuaSnip]",
+	      nvim_lua = "[Lua]",
+	      latex_symbols = "[Latex]",
+	    })
+	  }),
+	},
+
     sources = {
         { name = 'nvim_lsp' },
         { name = 'luasnip' },

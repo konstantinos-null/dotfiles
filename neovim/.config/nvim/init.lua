@@ -63,6 +63,8 @@ require("lazy").setup({
   -- 'hrsh7th/cmp-vsnip',
   'hrsh7th/cmp-nvim-lua',
   -- 'hrsh7th/nvim-compe',
+  --
+  'onsails/lspkind.nvim',
 
   -- Telescope related entries,
 {
@@ -86,6 +88,9 @@ require("lazy").setup({
   --
   'cljoly/telescope-repo.nvim',
   'airblade/vim-rooter',
+
+  -- Copilot
+  'github/copilot.vim',
 
   -- treesitter related plugins,
   {

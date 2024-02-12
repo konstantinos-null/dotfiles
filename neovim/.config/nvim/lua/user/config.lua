@@ -50,3 +50,8 @@ vim.g.netrw_banner = '0'
 
 vim.keymap.set('n', '<Leader>dd', '<Cmd>Lexplore %:p:h<CR>')
 vim.keymap.set('n', '<Leader>da', '<Cmd>Lexplore<CR>')
+
+-- Copilot settings
+vim.g.copilot_assume_mapped = true
+
+vim.g.copilot_filetypes = { ["yaml.ansible"] = true,["yaml"] = true,}
