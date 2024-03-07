@@ -120,21 +120,21 @@ require("lazy").setup({
 require('user.config')
 require('user.snips')
 
-require('ui.lualine')
-require('ui.bufferline')
-require('ui.devicons')
+-- require('ui.lualine')
+-- require('ui.bufferline')
+-- require('ui.devicons')
 require('ui.noice')
 
 require('utilities.telescope-config')
-require('utilities.toggleterm')
-require('utilities.treesitter')
-require('utilities.legendary')
+-- require('utilities.toggleterm')
+-- require('utilities.treesitter')
+-- require('utilities.legendary')
 
 
-require('code.autopairs')
-require('code.cmp')
-require('code.dap')
+-- require('code.autopairs')
+-- require('code.cmp')
+-- require('code.dap')
 require('code.lspconf')
-require('code.mason')
+-- require('code.mason')
 
 -- vim: ts=2 sts=2 sw=2 et
