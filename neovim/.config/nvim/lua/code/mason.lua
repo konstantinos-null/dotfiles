@@ -13,5 +13,5 @@ if not status_ok then
 end
 
 mason_lspconfig.setup({
-  ensure_installed = { "lua_ls", "yamlls", "pyright", "gopls", "bashls", "dockerls", "terraformls", "ansiblels" },
+  ensure_installed = { "lua_ls", "yamlls", "pyright", "gopls", "bashls", "dockerls", "terraformls", "ansiblels", "nil_ls" },
 })

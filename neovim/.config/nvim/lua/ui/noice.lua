@@ -1,26 +1,9 @@
-local status_ok, noice = pcall(require, "noice")
-if not status_ok then
+local noice_ok, noice = pcall(require, "noice")
+if not noice_ok then
     print("Something went wrong with noice")
     return
 end
 
--- noice.setup({
---   views = {
---     cmdline_popup = {
---         border = "none",
---         padding = { 2, 3},
---     },
---   },
---   filter_options = {},
---     win_options = {
---         winblend = 10,
---         winhighlight = {
---             Normal = "Normal",
---             FloatBorder = "SpecialChar"
---         },
---     },
--- })
---
 noice.setup({
     views = {
         cmdline_popup = {
@@ -63,6 +46,47 @@ vim.keymap.set("n", "<leader>er", function ()
 end)
 
 
+--Trouble nvim
+require("trouble").setup()
+-- set keymap for trouble.nvim
+vim.keymap.set("n", "<leader>xx", function () require("trouble").toggle() end, {desc = "Toggle trouble"})
 
+
+-- Nvimtree
 require("nvim-tree").setup()
-vim.api.nvim_set_keymap("n", "<C-h>", ":NvimTreeToggle<cr>", {silent=true, noremap=true})
+vim.api.nvim_set_keymap("n", "<C-h>", ":NvimTreeToggle<cr>", {silent=true, noremap=true, desc="Toggle Tree file explorer"})
+
+
+-- Bufferline
+local bufferline_ok, bufferline = pcall(require, "bufferline")
+if not bufferline_ok then
+    print("Something went wrong with bufferline")
+    return
+end
+
+bufferline.setup()
+
+-- Devicons
+local devicons_ok, devicons = pcall(require, "nvim-web-devicons")
+if not devicons_ok then
+    print("Something went wrong with nvim-web-devicons")
+    return
+end
+
+devicons.setup()
+
+-- Lualine
+local lualine_ok, lualine = pcall(require, "lualine")
+if not lualine_ok then
+    print("Something went wrong with lualine")
+    return
+end
+
+lualine.setup({
+   options = {
+    theme = 'palenight',
+    globalstatus = true
+   }
+})
+
+vim.opt.winbar = '%=%f'

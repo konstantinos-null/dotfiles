@@ -1,4 +1,43 @@
-local navic = require("nvim-navic")
+-- Mason setup and config
+local mason_ok, mason = pcall(require, "mason")
+if not mason_ok then
+    print("Something went wrong with mason")
+    return
+end
+
+mason.setup()
+
+local mason_lps_ok, mason_lspconfig = pcall(require, "mason-lspconfig")
+if not mason_lps_ok then
+    print("Something went wrong with mason_lspconfig")
+    return
+end
+
+mason_lspconfig.setup({
+  ensure_installed = { "lua_ls", "yamlls", "pyright", "gopls", "bashls", "dockerls", "terraformls", "ansiblels", "nil_ls" },
+})
+
+-- Nvim lspconfig setup
+local nvim_lsp = require('lspconfig')
+
+local on_attach = function(client, bufnr)
+    if client.server_capabilities.documentSymbolProvider then
+        navic.attach(client, bufnr)
+    end
+end
+
+local servers = { 'pyright', 'gopls', 'bashls', 'dockerls', 'terraformls', 'lua_ls', 'ansiblels', 'nil_ls' }
+for _, lsp in ipairs(servers) do
+    nvim_lsp[lsp].setup {
+        on_attach = on_attach,
+        flags = {
+            debounce_text_changes = 150,
+        }
+    }
+end
+-- Retired servers
+-- 'yamlls' 
+
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = { noremap=true, silent=true }
@@ -159,3 +198,35 @@ cmp.setup.cmdline(':', {
     }
   })
 })
+
+
+-- DAP installation and settings
+local dap_ok, dap = pcall(require, "dap")
+if not dap_ok then
+    print("Something went wrong with dap")
+    return
+end
+
+local dapui_ok, dapui = pcall(require, "dapui")
+if not dapui_ok then
+    print("Something went wrong with dapui")
+    return
+end
+
+dapui.setup{
+
+}
+
+vim.keymap.set('n', '<Leader>du', function () require('dapui').toggle() end, { desc = "DAP ui toggle"})
+
+require('dap-python').setup('~/.venv/pipx/bin/python3')
+
+
+vim.keymap.set('n', '<Leader>db', function() require('dap').toggle_breakpoint() end, { desc = "DAP toggle breakpoint"})
+vim.keymap.set('n', '<Leader>dc', function() require('dap').continue() end, { desc = "DAP continue"})
+vim.keymap.set('n', '<Leader>dl', function() require('dap').run_last() end, { desc = "DAP run last"})
+
+-- Autopairs setup
+require('nvim-autopairs').setup{}
+
+

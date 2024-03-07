@@ -55,3 +55,9 @@ vim.keymap.set('n', '<Leader>da', '<Cmd>Lexplore<CR>')
 vim.g.copilot_assume_mapped = true
 
 vim.g.copilot_filetypes = { ["yaml.ansible"] = true,["yaml"] = true,}
+
+
+vim.api.nvim_create_autocmd('TextYankPost', {
+  callback = function() vim.highlight.on_yank() end,
+  desc = "Briefly highlight yanked text"
+})
